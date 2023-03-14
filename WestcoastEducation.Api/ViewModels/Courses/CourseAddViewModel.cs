@@ -23,6 +23,8 @@ public class CourseAddViewModel
     [Required(ErrorMessage = "Slutdatum saknas")]
     public DateTime End { get; set; }
 
+    [Required(ErrorMessage = "Status saknas")]
     public CourseStatusEnum Status { get; set; }
+    
     public string Content { get; set; }
 }

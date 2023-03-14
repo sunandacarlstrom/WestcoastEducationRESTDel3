@@ -24,6 +24,10 @@
             <label asp-for="Teacher"></label>
             <span>@Model.Teacher</span>
         </li>
+        <li class="course-detail">
+            <label asp-for="Status"></label>
+            <span>@Model.GetStatusInSwedish</span>
+        </li>
     </ul>
 
     <ul class="courses-details-container">

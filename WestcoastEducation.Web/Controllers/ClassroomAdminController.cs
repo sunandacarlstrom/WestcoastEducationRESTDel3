@@ -92,11 +92,15 @@ public class ClassroomAdminController : Controller
     public async Task<IActionResult> Create(ClassroomPostViewModel classroom)
     {
         // kontrollerar att allt är korrekt utifrån det som har matats in av användaren efter att ha tryckt på knappen 'Spara'
-        if (!ModelState.IsValid) return View("Create", classroom);
+        if (!ModelState.IsValid) 
+        {
+        return await Create();
+
+        }
 
         // Om allt går bra... 
         // skapas ett nytt objekt, här är det som ska till api'et (just nu manuellt, men man kan också skicka en ny vymodell)
-        var model = new ClassroomDetailsViewModel
+        var model = new
         {
             Number = classroom.Number,
             Name = classroom.Name,
@@ -104,7 +108,8 @@ public class ClassroomAdminController : Controller
             Title = classroom.Title,
             Content = classroom.Content,
             Start = classroom.Start,
-            End = classroom.End
+            End = classroom.End,
+            Status = int.Parse(classroom.Status)
         };
 
         // skapar en ny klient 

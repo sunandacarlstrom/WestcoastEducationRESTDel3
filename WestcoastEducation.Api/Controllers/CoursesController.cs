@@ -42,7 +42,8 @@ public class CoursesController : ControllerBase
             Name = c.Name,
             Title = c.Title,
             Start = c.Start,
-            End = c.End
+            End = c.End,
+            Status = c.Status
         })
         // listar alla kurser
         .ToListAsync();
@@ -283,6 +284,8 @@ public class CoursesController : ControllerBase
             Teacher = teacher,
             Name = model.Name,
             Title = model.Title,
+            Start = model.Start, 
+            End = model.End,
             Status = model.Status,
             Content = model.Content
         };

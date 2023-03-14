@@ -17,13 +17,13 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th>KursID</th>
                     <th>Kursnummer</th>
                     <th>Kursnamn</th>
                     <th>Kurstitel</th>
                     <th>Startdatum</th>
                     <th>Slutdatum</th>
                     <th>Kurslängd</th>
+                    <th>Status</th>
                     <th></th>
                 </tr>
             </thead>
@@ -38,7 +38,6 @@
                             </a>
                         </td>
 
-                        <td>@classroom.Id</td>
                         <td>@classroom.Number</td>
                         <td>
                            <a asp-action="details" asp-route-classroomId=@classroom.Id>@classroom.Name</a>
@@ -47,7 +46,7 @@
                         <td>@classroom.Start.ToString("yyyy-MM-dd")</td>
                         <td>@classroom.End.ToString("yyyy-MM-dd")</td>
                         <td>@classroom.Length.ToString("dd") dagar</td>
-
+                        <td>@classroom.GetStatus</td>
                         <td>
                             <a class="delete-icon" asp-action="Delete" asp-controller="ClassroomAdmin"
                             asp-route-classroomId=@classroom.Id>

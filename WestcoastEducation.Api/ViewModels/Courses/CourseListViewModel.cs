@@ -1,3 +1,5 @@
+using WestcoastEducation.Api.Models;
+
 namespace WestcoastEducation.Api.ViewModels;
 public class CourseListViewModel
 {
@@ -8,4 +10,5 @@ public class CourseListViewModel
     public string Title { get; set; }
     public DateTime Start { get; set; }
     public DateTime End { get; set; }
+    public CourseStatusEnum Status { get; set; }
 }

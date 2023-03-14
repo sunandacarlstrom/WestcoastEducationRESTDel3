@@ -46,6 +46,11 @@
             <input asp-for="End" type="date" value="@endDate" />
             <span class="error" asp-validation-for="End"></span>
         </div>
+        <div class="form-control">
+            <label asp-for="Status"></label>
+            <select asp-for="Status" asp-items="Model.StatusList"></select>
+            <span class="error" asp-validation-for="Status"></span>
+        </div>
 
         <div class="form-control">
             <div class="buttons-container">

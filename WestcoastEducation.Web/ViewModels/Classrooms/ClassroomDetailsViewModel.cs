@@ -36,8 +36,8 @@ public class ClassroomDetailsViewModel
     public string Content { get; set; } = "";
 
     [DisplayName("På distans?")]
-
     public bool IsOnDistance { get; set; } = false;
+
     public string[] GetContentList
     {
         get
@@ -49,4 +49,30 @@ public class ClassroomDetailsViewModel
 
     [DisplayName("Studenter")]
     public ICollection<UserListViewModel> Students { get; set; }
+
+        public string GetStatusInSwedish
+    {
+        get
+        {
+            switch (Status)
+            {
+                case "NoStatus":
+                    return "Ingen status";
+                case "Upcoming":
+                    return "Kommande";
+                case "OpenForRegistration":
+                    return "Öppen för ansökan";
+                case "FullyBooked":
+                    return "Fullbokad";
+                case "CloseForRegistration":
+                    return "Stängd för ansökan";
+                case "Ongoing":
+                    return "Pågående";
+                case "Completed":
+                    return "Avslutad";
+                default:
+                    return "FEL KOD";
+            }
+        }
+    }
 }
